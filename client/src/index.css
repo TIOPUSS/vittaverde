@@ -1,0 +1,507 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Phone Input Styling */
+.PhoneInputCountry {
+  @apply bg-transparent;
+  border-right: 2px solid rgb(229, 231, 235);
+  padding-right: 12px;
+  margin-right: 12px;
+}
+
+.PhoneInputCountryIcon {
+  @apply w-6 h-6;
+  box-shadow: none !important;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.PhoneInputCountrySelectArrow {
+  @apply text-gray-400;
+  opacity: 0.5;
+  margin-left: 4px;
+}
+
+.PhoneInputInput {
+  @apply bg-transparent;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+}
+
+@layer base {
+  :root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(222.2 84% 4.9%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(222.2 84% 4.9%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(222.2 84% 4.9%);
+    --primary: hsl(222.2 47.4% 11.2%);
+    --primary-foreground: hsl(210 40% 98%);
+    --secondary: hsl(210 40% 96%);
+    --secondary-foreground: hsl(222.2 84% 4.9%);
+    --muted: hsl(210 40% 96%);
+    --muted-foreground: hsl(215.4 16.3% 46.9%);
+    --accent: hsl(210 40% 96%);
+    --accent-foreground: hsl(222.2 84% 4.9%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --border: hsl(214.3 31.8% 91.4%);
+    --input: hsl(214.3 31.8% 91.4%);
+    --ring: hsl(222.2 84% 4.9%);
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: hsl(222.2 84% 4.9%);
+    --foreground: hsl(210 40% 98%);
+    --card: hsl(222.2 84% 4.9%);
+    --card-foreground: hsl(210 40% 98%);
+    --popover: hsl(222.2 84% 4.9%);
+    --popover-foreground: hsl(210 40% 98%);
+    --primary: hsl(210 40% 98%);
+    --primary-foreground: hsl(222.2 47.4% 11.2%);
+    --secondary: hsl(217.2 32.6% 17.5%);
+    --secondary-foreground: hsl(210 40% 98%);
+    --muted: hsl(217.2 32.6% 17.5%);
+    --muted-foreground: hsl(215 20.2% 65.1%);
+    --accent: hsl(217.2 32.6% 17.5%);
+    --accent-foreground: hsl(210 40% 98%);
+    --destructive: hsl(0 62.8% 30.6%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --border: hsl(217.2 32.6% 17.5%);
+    --input: hsl(217.2 32.6% 17.5%);
+    --ring: hsl(212.7 26.8% 83.9%);
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Global font family */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respects user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Clean navigation */
+.medical-nav {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Simple button styles */
+.btn-primary {
+  background-color: #059669;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #047857;
+}
+
+.btn-outline {
+  background-color: white;
+  color: #059669;
+  border: 1px solid #059669;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: #f0fdf4;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Clean card styles */
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+/* Accessibility */
+.focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+}
+
+/* Interactive Header Animations */
+@keyframes gradient-x {
+  0%, 100% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4), 0 0 30px rgba(34, 197, 94, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 6s ease infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* Interactive button effects */
+.interactive-btn {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.interactive-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.interactive-btn:hover::before {
+  left: 100%;
+}
+
+/* Uppy Dashboard Customization - VittaVerde Theme */
+.uppy-Dashboard {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+.uppy-Dashboard-inner {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  border-radius: 16px !important;
+  border: none !important;
+}
+
+.uppy-Dashboard-AddFiles {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 12px !important;
+  border: 2px dashed #059669 !important;
+  padding: 48px !important;
+}
+
+.uppy-Dashboard-AddFiles-title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #047857 !important;
+  margin-bottom: 12px !important;
+}
+
+.uppy-Dashboard-AddFiles-title::before {
+  content: 'Solte os arquivos aqui ou ' !important;
+}
+
+.uppy-Dashboard-note {
+  font-size: 14px !important;
+  color: #6b7280 !important;
+  margin-top: 16px !important;
+}
+
+.uppy-Dashboard-browse {
+  color: #059669 !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+}
+
+.uppy-Dashboard-browse::before {
+  content: 'navegue' !important;
+}
+
+.uppy-Dashboard-dropFilesHereHint {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #059669 !important;
+}
+
+.uppy-DashboardTab {
+  background: white !important;
+  border-radius: 8px !important;
+  padding: 12px 20px !important;
+  margin: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.uppy-DashboardTab:hover {
+  background: #f0fdf4 !important;
+  transform: translateY(-2px) !important;
+}
+
+.uppy-DashboardTab--active {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.uppy-DashboardContent-bar {
+  background: linear-gradient(90deg, #059669 0%, #10b981 100%) !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.uppy-StatusBar {
+  background: rgba(5, 150, 105, 0.1) !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+.uppy-StatusBar-progress {
+  background: linear-gradient(90deg, #059669 0%, #10b981 100%) !important;
+}
+
+/* Drag and drop area styling */
+.uppy-Dashboard-AddFiles-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.uppy-Dashboard--isDraggingOver .uppy-Dashboard-AddFiles {
+  background: rgba(5, 150, 105, 0.1) !important;
+  border-color: #059669 !important;
+  transform: scale(1.02) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* File item styling */
+.uppy-Dashboard-Item {
+  background: white !important;
+  border-radius: 8px !important;
+  border: 1px solid #e5e7eb !important;
+  margin-bottom: 8px !important;
+}
+
+.uppy-Dashboard-Item-progress {
+  background: linear-gradient(90deg, #059669 0%, #10b981 100%) !important;
+}
+
+/* Close button */
+.uppy-Dashboard-close {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #dc2626 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.uppy-Dashboard-close:hover {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+/* Scrollbar hide utility for smooth horizontal scrolling */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* PhoneInput customization */
+.phone-input {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-input .PhoneInputCountry {
+  height: 48px;
+  padding: 0 12px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.phone-input .PhoneInputCountry:focus-within {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.phone-input .PhoneInputCountrySelect {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.phone-input .PhoneInputCountryIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.phone-input .PhoneInputInput {
+  flex: 1;
+}

@@ -1,0 +1,9 @@
+node_modules/
+.local/
+*.zip
+*.sql
+*.bin
+*.gz
+*.bak
+dist/
+build/
